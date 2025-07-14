@@ -4,14 +4,19 @@ declare(strict_types=1);
 
 use Illuminate\Container\Attributes\CurrentUser;
 use Illuminate\Support\Facades\Route;
-use Lightit\Backoffice\Users\App\Controllers\{
-    DeleteUserController,
-    GetUserController,
-    ListUserController,
-    StoreUserController,
-    UpdateUserController
-};
+use Lightit\Backoffice\Employees\App\Controllers\ListEmployeesController;
+use Lightit\Backoffice\Tasks\App\Controllers\FindTaskController;
+use Lightit\Backoffice\Tasks\App\Controllers\ListTasksController;
 
+
+use Lightit\Backoffice\Tasks\App\Controllers\UpsertTaskController;
+use Lightit\Backoffice\Tasks\App\Controllers\UpdateTaskController;
+use Lightit\Backoffice\Users\App\Controllers\DeleteUserController;
+use Lightit\Backoffice\Users\App\Controllers\GetUserController;
+use Lightit\Backoffice\Users\App\Controllers\ListUserController;
+use Lightit\Backoffice\Users\App\Controllers\StoreUserController;
+use Lightit\Backoffice\Users\App\Controllers\UpdateUserController;
+use Lightit\Backoffice\Employees\App\Controllers\StoreEmployeesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,3 +54,10 @@ Route::prefix('users')
         Route::delete('/{user}', DeleteUserController::class)
             ->whereNumber('user');
     });
+
+Route::post('employees', StoreEmployeesController::class)->name('employees');
+Route::get("employees", ListEmployeesController::class);
+
+Route::post("tasks", UpsertTaskController::class)->name('tasks');
+Route::get("tasks/{task}",FindTaskController::class);
+Route::get("tasks", ListTasksController::class);

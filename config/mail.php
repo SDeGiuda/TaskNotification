@@ -114,8 +114,8 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
-        'name' => env('MAIL_FROM_NAME', 'Example'),
+        'address' => env('LIGHTIT_FROM_EMAIL', 'hello@example.com'),
+        'name' => env('LIGHTIT_FROM_NAME', 'Example'),
     ],
 
 ];
