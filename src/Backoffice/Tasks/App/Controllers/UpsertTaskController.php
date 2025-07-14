@@ -14,9 +14,12 @@ class UpsertTaskController
     {
         $task = ($action)($request->validated());
 
+        $status = $task->wasRecentlyCreated
+            ? JsonResponse::HTTP_CREATED
+            : JsonResponse::HTTP_OK;
+
         return response()->json([
-            'message' => ' successful request ',
             'data' => $task,
-        ]);
+        ], $status);
     }
 }

@@ -25,7 +25,6 @@ class UpsertTaskAction
 
                 $task->load('employee');
 
-
                 if ($task->employee->id !== $formerEmployee->id) {
                     $task->employee->notify(new TaskAssignedNotification($task));
                     $formerEmployee->notify(new TaskUnassignedNotification($task));
@@ -35,7 +34,6 @@ class UpsertTaskAction
             }
         } catch (\Throwable) {
         }
-
 
         $task = Task::create($data);
         $employee = $task->employee;

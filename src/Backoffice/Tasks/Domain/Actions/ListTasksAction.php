@@ -1,6 +1,7 @@
 <?php
 
 declare(strict_types=1);
+
 namespace Lightit\Backoffice\Tasks\Domain\Actions;
 
 use Illuminate\Database\Eloquent\Collection;

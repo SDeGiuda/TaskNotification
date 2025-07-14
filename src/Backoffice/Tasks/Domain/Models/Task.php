@@ -34,7 +34,7 @@ use Lightit\Backoffice\Employees\Domain\Models\Employee;
  */
 class Task extends Model
 {
-    public $guarded = [];
+    public $guarded = ['id'];
 
     /**
      * @return BelongsTo<Employee, $this>

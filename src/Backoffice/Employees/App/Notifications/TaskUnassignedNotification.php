@@ -1,6 +1,7 @@
 <?php
 
 declare(strict_types=1);
+
 namespace Lightit\Backoffice\Employees\App\Notifications;
 
 use Illuminate\Bus\Queueable;
@@ -27,7 +28,7 @@ class TaskUnassignedNotification extends Notification
     public function toMail(object $notifiable): MailMessage
     {
         return new MailMessage()
-            ->subject('Task Was Assigned to someone else')
+            ->subject('Task Assigned to someone else')
             ->markdown('mail.unassigned-task', [
                 'task' => $this->task,
                 'employee' => $notifiable,

@@ -11,11 +11,11 @@ class UpsertTaskRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'id' => [ 'integer', 'exists:tasks,id'],
-            'title' => 'required',
-            'description' => 'required',
+            'id' => ['integer', 'nullable', 'exists:tasks,id'],
+            'title' => ['required', 'max:255', 'string'],
+            'description' => ['required', 'max:5000', 'string'],
             'employee_id' => ['required', 'exists:employees,id'],
-            'status'=> ['required'],
+            'status' => ['required', 'Rule::enum(Status::class)'],
         ];
     }
 }

@@ -19,7 +19,6 @@ class UpdateTaskAction
         $task->update($data);
         $task->load('employee');
 
-
         if ($task->employee->id !== $former_employee->id) {
             $task->employee->notify(new TaskAssignedNotification($task));
             $former_employee->notify(new TaskUnassignedNotification($task));

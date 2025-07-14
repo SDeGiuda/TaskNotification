@@ -1,6 +1,7 @@
 <?php
 
 declare(strict_types=1);
+
 namespace Lightit\Backoffice\Tasks\App\Controllers;
 
 use Illuminate\Http\JsonResponse;

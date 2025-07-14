@@ -1,6 +1,7 @@
 <?php
 
 declare(strict_types=1);
+
 namespace Lightit\Backoffice\Tasks\App\Controllers;
 
 use Illuminate\Http\JsonResponse;
@@ -12,6 +13,6 @@ class ListTasksController
     {
         $tasks = ($action)();
 
-        return response()->json(['data'=>$tasks]);
+        return response()->json(['data' => $tasks]);
     }
 }
