@@ -12,7 +12,7 @@ class ListTasksAction
     /**
      * @return Collection<int, Task>
      */
-    public function __invoke(): Collection
+    public function execute(): Collection
     {
         return Task::all();
     }

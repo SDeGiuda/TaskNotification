@@ -10,9 +10,9 @@ use Lightit\Backoffice\Tasks\Domain\Actions\UpsertTaskAction;
 
 class UpsertTaskController
 {
-    public function __invoke(UpsertTaskRequest $request, UpsertTaskAction $action): JsonResponse
+    public function __invoke(UpsertTaskRequest $request, UpsertTaskAction $upsertTaskAction): JsonResponse
     {
-        $task = ($action)($request->validated());
+        $task = $upsertTaskAction->execute($request->validated());
 
         $status = $task->wasRecentlyCreated
             ? JsonResponse::HTTP_CREATED

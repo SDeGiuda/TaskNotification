@@ -11,7 +11,7 @@ class StoreEmployeeAction
     /**
      * @param array<string, mixed> $data
      */
-    public function __invoke(array $data): Employee
+    public function execute(array $data): Employee
     {
         return Employee::create($data);
     }

@@ -9,9 +9,9 @@ use Lightit\Backoffice\Employees\Domain\Actions\ListEmployeesAction;
 
 class ListEmployeesController
 {
-    public function __invoke(ListEmployeesAction $action): JsonResponse
+    public function __invoke(ListEmployeesAction $listEmployeesAction): JsonResponse
     {
-        $employees = ($action)();
+        $employees = $listEmployeesAction->execute(); // $employees = $listEmployeesAction->execute();
 
         return response()->json(['data' => $employees]);
     }

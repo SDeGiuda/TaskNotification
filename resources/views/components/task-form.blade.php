@@ -62,7 +62,7 @@
 
             select.innerHTML = '<option value="">Select Employee</option>';
 
-            fetch('/api/employees', {
+            fetch('{{ route('employees.index') }}', {
                 headers: {
                     'Accept': 'application/json',
                     'X-Requested-With': 'XMLHttpRequest'
@@ -89,7 +89,7 @@
     function loadTasks(select) {
         if (tasksLoaded) return;
 
-        fetch('/api/tasks', {
+        fetch('{{ route('tasks.index') }}', {
             headers: {
                 'Accept': 'application/json',
                 'X-Requested-With': 'XMLHttpRequest'

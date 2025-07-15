@@ -12,7 +12,7 @@ class ListEmployeesAction
     /**
      * @return Collection<int, Employee>
      */
-    public function __invoke(): Collection
+    public function execute(): Collection
     {
         return Employee::all();
     }

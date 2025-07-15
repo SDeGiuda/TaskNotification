@@ -10,9 +10,9 @@ use Lightit\Backoffice\Employees\Domain\Actions\StoreEmployeeAction;
 
 class StoreEmployeesController
 {
-    public function __invoke(StoreEmployeeRequest $request, StoreEmployeeAction $action): \Illuminate\Http\JsonResponse
+    public function __invoke(StoreEmployeeRequest $request, StoreEmployeeAction $storeEmployeeAction): \Illuminate\Http\JsonResponse
     {
-        $employee = ($action)($request->validated());
+        $employee = $storeEmployeeAction->execute($request->validated());
 
         return response()->json([
             'data' => $employee,

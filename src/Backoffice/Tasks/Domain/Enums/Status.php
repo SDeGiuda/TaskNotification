@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Lightit\Backoffice\Tasks\Domain\Models;
+namespace Lightit\Backoffice\Tasks\Domain\Enums;
 
 enum Status: string
 {

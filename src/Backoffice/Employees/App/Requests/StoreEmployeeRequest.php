@@ -15,4 +15,9 @@ class StoreEmployeeRequest extends FormRequest
             'email' => ['required', 'email:strict'],
         ];
     }
+
+    public function toDto()
+    {
+        
+    }
 }
