@@ -9,7 +9,7 @@ use Lightit\Backoffice\Employees\Domain\Models\Employee;
 class StoreEmployeeAction
 {
     /**
-     * @param array<string, mixed> $data
+     * @param  array<string, mixed>  $data
      */
     public function execute(array $data): Employee
     {

@@ -6,6 +6,7 @@ namespace Lightit\Backoffice\Tasks\App\Controllers;
 
 use Illuminate\Http\JsonResponse;
 use Lightit\Backoffice\Tasks\App\Requests\UpsertTaskRequest;
+use Lightit\Backoffice\Tasks\App\Resources\TasksResource;
 use Lightit\Backoffice\Tasks\Domain\Actions\UpsertTaskAction;
 
 class UpsertTaskController
@@ -19,7 +20,7 @@ class UpsertTaskController
             : JsonResponse::HTTP_OK;
 
         return response()->json([
-            'data' => $task,
+            'data' => new TasksResource($task),
         ], $status);
     }
 }

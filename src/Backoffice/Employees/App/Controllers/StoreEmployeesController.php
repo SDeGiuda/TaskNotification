@@ -6,7 +6,9 @@ namespace Lightit\Backoffice\Employees\App\Controllers;
 
 use Illuminate\Http\JsonResponse;
 use Lightit\Backoffice\Employees\App\Requests\StoreEmployeeRequest;
+use Lightit\Backoffice\Employees\App\Resources\EmployeesResource;
 use Lightit\Backoffice\Employees\Domain\Actions\StoreEmployeeAction;
+
 
 class StoreEmployeesController
 {
@@ -17,7 +19,7 @@ class StoreEmployeesController
         $employee = $storeEmployeeAction->execute($request->validated());
 
         return response()->json([
-            'data' => $employee,
+            'data' => new EmployeesResource($employee),
         ], JsonResponse::HTTP_CREATED);
     }
 }

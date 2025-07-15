@@ -13,9 +13,7 @@ class TaskUnassignedNotification extends Notification
 {
     use Queueable;
 
-    public function __construct(public Task $task)
-    {
-    }
+    public function __construct(public Task $task) {}
 
     /**
      * @return array<int, string>
