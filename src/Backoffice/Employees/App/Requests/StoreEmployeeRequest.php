@@ -18,6 +18,5 @@ class StoreEmployeeRequest extends FormRequest
 
     public function toDto()
     {
-        
     }
 }

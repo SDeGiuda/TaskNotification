@@ -13,7 +13,7 @@ class UpsertTaskAction
     /**
      * @param array<string, mixed> $data
      */
-    public function execute (array $data): Task
+    public function execute(array $data): Task
     {
         /** @var ?Task $task */
         try {

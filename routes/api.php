@@ -51,12 +51,12 @@ Route::prefix('users')
         Route::delete('/{user}', DeleteUserController::class)
             ->whereNumber('user');
     });
-Route::prefix('employees')->name('employees.')->group(function () {
+Route::prefix('employees')->name('employees.')->group(function (): void {
     Route::post('/', StoreEmployeesController::class)->name('store');
     Route::get('/', ListEmployeesController::class)->name('index');
 });
 
-Route::prefix('tasks')->name('tasks.')->group(function () {
+Route::prefix('tasks')->name('tasks.')->group(function (): void {
     Route::post('/', UpsertTaskController::class)->name('store');
     Route::get('/', ListTasksController::class)->name('index');
     Route::get('/{task}', FindTaskController::class)->name('show');
