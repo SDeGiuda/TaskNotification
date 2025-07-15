@@ -120,7 +120,7 @@
             return;
         }
 
-        fetch(`/api/tasks/${taskId}`, {
+        fetch('{{route('tasks.show', ['task' => ':taskId']) }}'.replace(':taskId',taskId), {
             headers: {
                 'Accept': 'application/json',
                 'X-Requested-With': 'XMLHttpRequest'
