@@ -1,6 +1,6 @@
 <div class="form-container">
     <h2 class="mb-4">Task Management</h2>
-    <form id="taskForm" action="{{ route('tasks') }}" method="POST">
+    <form id="taskForm" action="{{ route('tasks.store') }}" method="POST">
         @csrf
 
         <div class="form-group">
