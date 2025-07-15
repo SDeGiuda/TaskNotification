@@ -14,7 +14,9 @@ class TaskAssignedNotification extends Notification implements ShouldQueue
 {
     use Queueable;
 
-    public function __construct(public Task $task) {}
+    public function __construct(public Task $task)
+    {
+    }
 
     /**
      * @return array<int, string>

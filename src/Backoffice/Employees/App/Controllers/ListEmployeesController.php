@@ -8,7 +8,6 @@ use Illuminate\Http\JsonResponse;
 use Lightit\Backoffice\Employees\App\Resources\EmployeesResource;
 use Lightit\Backoffice\Employees\Domain\Actions\ListEmployeesAction;
 
-
 class ListEmployeesController
 {
     public function __invoke(ListEmployeesAction $listEmployeesAction): JsonResponse

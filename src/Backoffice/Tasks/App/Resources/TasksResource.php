@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Lightit\Backoffice\Tasks\App\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;

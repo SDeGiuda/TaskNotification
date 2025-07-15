@@ -10,9 +10,9 @@ use Illuminate\Notifications\Notifiable;
 use Lightit\Backoffice\Tasks\Domain\Models\Task;
 
 /**
- * @property int $id
- * @property string $name
- * @property string $email
+ * @property int                          $id
+ * @property string                       $name
+ * @property string                       $email
  * @property \Carbon\CarbonImmutable|null $created_at
  * @property \Carbon\CarbonImmutable|null $updated_at
  *
